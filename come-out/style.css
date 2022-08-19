@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* settins starts here */
+.settings { 
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 100%;
+    transform: translateX(-50px) translateY(-50%);
+    transition: .3s;
+} 
+.settings-out { 
+    transform: translateX(-100%) translateY(-50%);
+}
+.settings .icon { 
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    cursor: pointer;
+}
+.settings .icon i{ 
+    animation: rotate 3s infinite linear;
+}
+@keyframes rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);} 
+}
+.settings .content {
+    background-color: teal;
+    height: 200px;
+    width: 80px;
+}
+/* settins ends here */

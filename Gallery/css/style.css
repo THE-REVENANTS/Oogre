@@ -1,0 +1,191 @@
+* {
+    margin: 0 ;
+    padding : 0 ;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+    --main-color: orangered ;
+}
+
+/* Portfolio section goes here 
+-------------------------------*/
+.portfolio {  
+    height:auto; 
+    width: 100%;
+    transition: 5s;  
+}
+.portfolio .container {   
+    width:100%;
+    height: auto; 
+    margin: 0 auto; 
+    padding-bottom: 10vh;
+}  
+.portfolio .container h1{  
+    position: relative;
+    color: var(--main-color);
+    text-align: center;
+    padding: 10vh 0;
+    text-transform: uppercase; 
+    font-size: 50px;
+} 
+.portfolio .container h1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    margin-top: 5px; 
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-color);
+    height: 3px;
+    width: 25%;
+}
+.portfolio .lista {
+    display: flex; 
+    flex-wrap: wrap;
+    text-align: center; 
+    justify-content: center;
+    margin: 50px;
+    user-select: none;
+}
+.portfolio .lista li{ 
+    padding: 10px 20px;
+    margin: 0 5px;
+    color: black;
+    background-color: rgb(235, 235, 235);
+    padding: 10px 15px;
+    font-size: 25px; 
+    cursor: pointer;
+    text-decoration: none;
+    margin: 5px ;
+}  
+
+.portfolio .lista li:hover{ 
+    background-color: var(--main-color);
+    color: white;
+}  
+.portfolio .lista li.active {
+    background-color: var(--main-color);
+    color: white;
+}
+.portfolio .products {
+    display: flex;   
+    padding: 0 4px; 
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+.portfolio .products .row{
+    height: fit-content; 
+    flex: 33%;  
+}
+.portfolio .products .item-box{  
+    padding: 4px; 
+    width: calc(100% / 3);  
+    cursor: pointer;   
+    overflow: hidden;
+    height: 200px; 
+    overflow: hidden;
+    filter: grayscale(71%) brightness(70%);
+    animation: come-out .5s ;
+    position: relative;
+}   
+@keyframes come-out {
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
+} 
+.portfolio .products .item-box:hover{  
+    filter: grayscale(0%) brightness(100%);
+}  
+.portfolio .products .item-box:hover .layer{  
+    display: flex;
+}  
+.portfolio .products .item-box img {
+    height: 100%; 
+    vertical-align: middle;
+    width: 100%;
+    object-fit: cover;
+}  
+.portfolio .products .item-box.hide{
+    display: none;
+}  
+
+
+.img-modal {
+    position: fixed;
+    z-index: 80;
+    background-color: rgba(00, 00, 00, .7);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.img-modal .X {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2%;
+    left: 100%;
+    color: white;
+    transform: translateX(-125%) translateY(15%); 
+    font-size: 65px;  
+    border-radius: 50%; 
+    cursor: pointer;
+}
+.img-modal .modal-img-container {
+    position: relative;
+    height: auto;
+    width: fit-content;
+    margin: 14px;   
+    cursor: pointer; 
+    max-width: 85%;
+    max-height: 90%;
+}  
+.img-modal .modal-img-container img{
+    height: 100%;
+    animation: come-out-modal .5s;
+}  
+@keyframes come-out-modal {
+    0%{transform: scale(0) rotate(-180deg);}
+    100%{transform: scale(1) rotate(0);}
+}
+@media (max-width: 800px){
+
+    .portfolio .lista li{ 
+        font-size: 20px;
+    } 
+    .portfolio .products {  
+        width: 90%;
+    }  
+    .portfolio .products .item-box{  
+        padding: 4px; 
+        width: calc(100% / 2);  
+        cursor: pointer;   
+        overflow: hidden;
+        height: 200px; 
+        overflow: hidden;
+    }  
+    .img-modal .modal-img-container {
+        height: 50%;
+    }  
+    .img-modal .modal-img-container img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }  
+    
+}
+@media  (max-width: 600px){
+    
+    .portfolio .products { 
+        width: 90%;
+    }
+    
+}

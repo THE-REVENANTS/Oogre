@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.text-writer{ 
+    height: 100vh;
+    width: 100%;  
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: black;
+} 
+.text-writer .text{ 
+    color: white; 
+    font-size: 35px; 
+}
+.text-writer .text .text-to-write{ 
+    color: green;
+    font-weight: bold; 
+    padding-left: 10px;
+    transition: 1s;
+    position: relative;
+} 
+.text-writer .text .text-to-write::after{ 
+    content: '';
+    height: 100%;
+    width: 3px; 
+    background: white;
+    position: absolute;
+    display: block;
+    left: 101%; 
+    top: 0;
+    animation: lightning .4s infinite;
+} 
+@keyframes lightning {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+

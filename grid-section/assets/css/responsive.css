@@ -1,0 +1,54 @@
+
+@media (max-width :1040px) {
+
+.screen{ 
+    height:auto; 
+    padding: 5vh 0;
+}
+.cards{
+    grid-template-rows: repeat(4 , 250px) ;
+    grid-template-columns: repeat(2 , 50%); 
+    width: 90%;
+    height: auto;
+    grid-template-areas: 
+    "a a"
+    "c d" 
+    "h h"
+    "e f";
+}
+/*
+.cards .card:nth-child(1){
+    grid-area: a;
+}
+.cards .card:nth-child(2){
+    grid-area: c ;
+}
+.cards .card:nth-child(3){
+    grid-area: d ;
+}
+.cards .card:nth-child(4){
+    grid-area: e ;
+}
+.cards .card:nth-child(5){
+    grid-area: f ;
+}
+.cards .card:nth-child(6){
+    grid-area: h ;
+}
+*/
+}
+@media (max-width :470px) {
+.cards{
+    grid-template-rows: repeat(6 , 250px) ;
+    grid-template-columns: repeat(1 , 100%); 
+    grid-template-areas: 
+    "a"
+    "c" 
+    "d"
+    "h"
+    "e"
+    "f";
+}
+}
+
+
